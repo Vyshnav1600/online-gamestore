@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<div th:replace="common/header :: navbar" />
+	
+	<div class="container">
+		<div>
+			<ol class="breadcrumb">
+				<li><a th:href="@{/game/gameList}"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>Go back</a></li>
+				<li><a th:href="@{/game/updateGame?id=}+${game.id}">Edit</a></li>
+			</ol>
+			
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-3">
+				<div class="panel panel-default">
+				<div class="panel-body">
+					<img th:src="@{/image/game/}+${game.id}+'.png'" class="img-responsive center-block" />
+				</div>
+				</div>
+			</div>
+			<div class="col-xs-9">
+				<h3 th:text="${game.title}"></h3>
+				<div class="row">
+					<div class="col-xs-6">
+						<p><strong>Developers: </strong><span th:text="${game.developers}"></span></p>
+						<p><strong>Writers: </strong><span th:text="${game.writers}"></span></p>
+						<p><strong>Release Date: </strong><span th:text="${game.releaseDate}"></span></p>
+						<p><strong>Language: </strong><span th:text="${game.language}"></span></p>
+						<p><strong>Category: </strong><span th:text="${game.category}"></span></p>
+						<p><strong>Discs: </strong><span th:text="${game.numberOfDiscs}"></span></p>
+					</div>
+					<div class="col-xs-6">
+						<p><strong>Format: </strong><span th:text="${game.format}"></span></p>
+						<p><strong>GSIN: </strong><span th:text="${game.gsin}"></span></p>
+						<p><strong>Shipping Weight: </strong><span th:text="${game.shippingWeight}"></span></p>
+						<p><strong>List Price: </strong><span th:text="${game.listPrice}"></span>&#8377;</p>
+						<p><strong>Our Price: </strong><span th:text="${game.ourPrice}"></span>&#8377;</p>
+						<p><strong>Number in Stock: </strong><span th:text="${game.inStockNumber}"></span></p>
+					</div>
+				</div>
+				
+				<p><Strong>Description: </Strong><span th:utext="${game.description}"></span></p>
+			</div>
+			
+		</div>
+	</div>
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>

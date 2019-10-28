@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<div th:replace="common/header :: navbar" />
+
+	<div class="container">
+		<div class="row" style="margin-bottom: -100px;">
+			<div class="col-xs-8">
+				<h2 class="section-headline">
+					<h2 class="section-headline">
+						<span
+							th:text="${user}? ${#strings.toUpperCase(user.username)} : 'All Games'"></span>
+					</h2>
+				</h2>
+			</div>
+			
+		</div>
+		<hr
+			style="position: absolute; width: 85%; height: 6px; background-color: #333; z-index: -1; margin-top: -80px;" />
+		<img class="img-responsive" src="/image/wood.png"
+			style="margin-top: -75px;" />
+
+		<div class="row" style="margin-top: 60px;">
+			<div class="col-xs-3">
+				<h3><label for="category">Category</label></h3>
+				<div class="list-group" id="category">
+					<a th:href="@{/gameshelf(category='all')}" th:classappend="${activeAll}? 'active'" class="list-group-item">All</a>
+					<a th:href="@{/searchByCategory(category='Action')}" th:classappend="${activeAction}? 'active'" class="list-group-item">Action</a>
+					<a th:href="@{/searchByCategory(category='Adventure')}" th:classappend="${activeAdventure}? 'active'" class="list-group-item">Adventure</a>
+					<a th:href="@{/searchByCategory(category='Shooter')}" th:classappend="${activeShooter}? 'active'" class="list-group-item">Shooter</a>
+					<a th:href="@{/searchByCategory(category='Racing')}" th:classappend="${activeRacing}? 'active'" class="list-group-item">Racing</a>
+					<a th:href="@{/searchByCategory(category='Sports')}" th:classappend="${activeSports}? 'active'" class="list-group-item">Sports</a>
+				</div>
+			</div>
+			
+			<div class="col-xs-9">
+				<div th:if="${emptyList}">
+					<h5 style="font-style: italic;">Oops, no result is found. Try
+						something else or try again later.</h5>
+				</div>
+
+				<table border="0" id="gameList">
+					<thead>
+						<tr>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="game-item" data-th-each="game : ${gameList}" >
+							<td>
+								<div th:if="${game != null}">
+									<div class="row" style="margin-bottom: 50px;">
+										<div class="col-xs-3">
+											<a th:href="@{/gameDetail?id=}+${game.id}"><img 
+												class="img-responsive shelf-game"
+												th:src="#{adminPath}+@{/image/game/}+${game.id}+'.png'" /></a>
+										</div>
+										<div class="col-xs-9" >
+											<a th:href="@{/gameDetail?id=}+${game.id}"><h4
+													th:text="${game.title}"></h4></a> <span
+												th:text="${game.releaseDate}"></span>
+											<p th:text="${game.developers}"></p>
+											<a th:href="@{/gameDetail?id=}+${game.id}"><span
+												th:text="${#strings.capitalize(game.format)}"></span></a> <span
+												th:text="${game.numberOfDiscs}"><span> Discs</span></span><br />
+
+											<a th:href="@{/gameDetail?id=}+${game.id}"><span
+												style="font-size: x-large; color: #db3208;"><span
+													th:text="${#numbers.formatDecimal(game.ourPrice, 0 , 'COMMA', 2, 'POINT')}"></span>&#8377;</span></a>
+
+											<span style="text-decoration: line-through;"><span
+												th:text="${#numbers.formatDecimal(game.listPrice, 0 , 'COMMA', 2, 'POINT')}"></span>&#8377;</span>
+
+											<p th:utext="${#strings.abbreviate(game.description, 1000)}"></p>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!-- end of container -->
+<div th:replace="common/header :: footer"/>
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+	
+	<script>
+		$(document).ready(function() {
+			$('#gameList').DataTable({
+				"lengthMenu":[[5,10,15,20,-1],[5,10,15,20,"All"]],
+				"ordering":false,
+				stateSave:true
+			});
+			
+			$("#gameList").on('page.dt', function() {
+				$('html, body').animate({
+					scrollTop: $('#gameList').offset().top
+				}, 200);
+			});
+		});
+	</script>
+</body>
+</html>

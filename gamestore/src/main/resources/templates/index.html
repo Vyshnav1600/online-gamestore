@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<div th:replace="common/header :: navbar" />
+
+	<div class="container">
+		<div class="row banner">
+			<!-- carousel -->
+<!-- 			<div class="col-xs-8">
+ --> 				<div class="panel panel-default" style="margin-top: 20px;">
+ 					<div class="panel-body">
+						<div id="carousel-example-generic" class="carousel slide"
+							data-ride="carousel">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li data-target="#carousel-example-generic" data-slide-to="0"
+									class="active"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+							</ol>
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner" role="listbox">
+								<div class="item active">
+								<img
+									src="https://www.gamingonlinux.com/uploads/articles/article_media/1226553021568742642gol1.jpg"
+									alt="..." />
+								<div class="carousel-caption">
+										<h4>First Thumbnail Label</h4>
+										<p>Contrary to popular belief, Lorem Ipsum is not simply
+											random text. It has roots in a piece of classical Latin
+											literature from 45 BC, making it over 2000 years old.</p>
+									</div>
+								</div>
+								<div class="item">
+									<img
+										src="https://www.dualshockers.com/wp-content/uploads/2016/07/1920x1080_wallpaper.jpg"
+										alt="..." />
+									<div class="carousel-caption">
+										<h4>First Thumbnail Label</h4>
+										<p>Contrary to popular belief, Lorem Ipsum is not simply
+											random text. It has roots in a piece of classical Latin
+											literature from 45 BC, making it over 2000 years old.</p>
+									</div>
+								</div>
+								<div class="item">
+									<img
+										src="https://cdn.mos.cms.futurecdn.net/zZHXTTaqQkaeN7Ca6fHJs7-1200-80.jpg"
+										alt="..." />
+									<div class="carousel-caption">
+										<h4>First Thumbnail Label</h4>
+										<p>Contrary to popular belief, Lorem Ipsum is not simply
+											random text. It has roots in a piece of classical Latin
+											literature from 45 BC, making it over 2000 years old.</p>
+									</div>
+								</div>
+								<div class="item">
+									<img
+										src="https://static.techspot.com/images2/news/bigimage/2019/09/2019-09-22-image.jpg"
+										alt="..." />
+									<div class="carousel-caption">
+										<h4>First Thumbnail Label</h4>
+										<p>Contrary to popular belief, Lorem Ipsum is not simply
+											random text. It has roots in a piece of classical Latin
+											literature from 45 BC, making it over 2000 years old.</p>
+									</div>
+								</div>
+								
+							</div>
+
+							<!-- Controls -->
+							<a class="left carousel-control" href="#carousel-example-generic"
+								role="button" data-slide="prev"> <span
+								class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a> <a class="right carousel-control"
+								href="#carousel-example-generic" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right"
+								aria-hidden="true"></span> <span class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+<!-- 			</div>
+ -->			
+		</div>
+
+		<hr />
+
+		<div class="row">
+			<div class="col-xs-4">
+				<div clas="panel panel-default">
+					<div class="panel-body">
+						<a th:href="@{/gameshelf}"><img src="/image/bestseller.png" class="img-responsive" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div clas="panel panel-default">
+					<div class="panel-body">
+						<a th:href="@{/hours}"><img src="/image/hours.png" class="img-responsive" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<div clas="panel panel-default">
+					<div class="panel-body">
+						<a th:href="@{/faq}"><img src="/image/faq.png" class="img-responsive" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<div class="home-headline">
+				<span>Featured Games</span>
+			</div>
+			<hr style="margin-top: -15px;" />
+		</div>
+
+
+		<div class="row">
+			<div id="featured-games" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#featured-games" data-slide-to="0" class="active"></li>
+					<li data-target="#featured-games" data-slide-to="1"></li>
+					<li data-target="#featured-games" data-slide-to="2"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+ 						<img src="/image/shelf.png" class="img-responsive" />
+						<div class="carousel-caption">
+							<div class="row">
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/g/h/ghost-recon-breakpoint-cd-keys-discount_1__1.jpg" />
+								</div>
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/g/r/grid-pc-cd-keys-discounts-steam.jpg" />
+								</div>
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/g/t/gta-v-poe-mscb.jpg" />
+								</div>
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/m/o/monster-hunter-world-pc-get-cheap-cd-key.jpg" />
+								</div>
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/t/e/tekken-7-sp-2-cd-keys-discount.jpg" />
+								</div>
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/w/o/wolfensteintnotobbase.png" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+ 						<img src="/image/shelf.png" class="img-responsive" />
+ 						<div class="carousel-caption">
+							<div class="row">
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/a/_/a_way_out_xbox_one.png" />
+								</div>
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/s/e/sea_of_thieves_anniversary_edition_xbox_one_buy_now_1.jpg" />
+								</div>
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/y/o/youngbloodbase_1_.jpg" />
+								</div>
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/f/r/frh4.jpg" />
+								</div>
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/p/l/playerunknowns_battlegrounds_pugb_xbox_one_1.jpg" />
+								</div>
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/g/e/gears-5-cd-keys-xbox-discount.jpg" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+ 						<img src="/image/shelf.png" class="img-responsive" />
+ 						<div class="carousel-caption">
+							<div class="row">
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/a/n/anthem-ps4-dlc-cd-keys-buy-now.jpg" />
+								</div>
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/d/r/driveclub_vr_ps4_cover.png" />
+								</div>
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/d/2/d2-forsaken-es.jpg" />
+								</div>
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/c/h/childps3ps4.png" />
+								</div>
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/r/e/red_dead_redemption_2_ultimate_editionps4.jpg" />
+								</div>
+								<div class="col-xs-2">
+									<img class="img-responsive" src="https://cdn.cdkeys.com/500x706/media/catalog/product/f/o/fortnite_bomber_skin_500_v_bucks_ps4.jpg" />
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Controls -->
+				<a class="left carousel-control" href="##featured-games"
+					role="button" data-slide="prev"> <span
+					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a> <a class="right carousel-control" href="##featured-games"
+					role="button" data-slide="next"> <span
+					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+
+	</div>
+	<!-- end of container -->
+
+<div th:replace="common/header :: footer"/>
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>
